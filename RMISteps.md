@@ -1,7 +1,6 @@
 # Java RMI 
 
-## 1) Create Project (Eclipse)
-- File → New → Java Project → `RMIProject`
+## 1) Create a new java Project
 
 ## 2) Create Package
 - `practicals`
