@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//Inser code
 public class InsertDataExp4 {
 
     static final String DB_URL = "jdbc:mysql://localhost/database"; //db name 
@@ -36,7 +37,7 @@ public class InsertDataExp4 {
         }
     }
 }
-
+//Select code
 class SelectDataExp4 {
 
     static final String DB_URL = "jdbc:mysql://localhost/dbname";
