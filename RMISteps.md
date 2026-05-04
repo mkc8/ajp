@@ -1,10 +1,21 @@
+# Java RMI 
 
-## 🔹 Files
+## 1) Create Project (Eclipse)
+- File → New → Java Project → `RMIProject`
 
-* one.java 
-* two.java 
-* rmiserver.java
-* rmiclient.java
+## 2) Create Package
+- `practicals`
+
+## 3) Create Files 
+
+### one.java
+```java
+package practicals;
+import java.rmi.*;
+
+public interface AddInterface extends Remote {
+    int palin(String s) throws RemoteException;
+}
 
 # Java RMI Palindrome Checker
 
@@ -104,45 +115,19 @@ public class rmiclient {
 
 ## 🔹 Steps to Run
 
-### 1. Compile Project
+Compile into bin folder
+# Compile
+From Root folder 
+javac -d bin src/practicals/*.java
 
-Eclipse compiles automatically
-
-### 2. Start RMI Registry
-
-Open terminal in project folder:
-
-```bash
+# Terminal 1
+go to bin folder and then run
 rmiregistry
-```
 
-### 3. Run Server
+# Terminal 2
+go to bin folder and then run 
+java practicals.rmiserver
 
-Run:
-
-```
-rmiserver.java
-```
-
-Output:
-
-```
-Object registered
-```
-
-### 4. Run Client
-
-Run:
-
-```
-rmiclient.java
-```
-
-## 🔹 Output
-
-* Checks whether string is palindrome or not
-
-## ⚠️ Common Errors
-
-* Connection refused → registry not running
-* NotBoundException → wrong binding name
+# Terminal 3
+go to bin folder and run
+java practicals.rmiclient
