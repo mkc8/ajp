@@ -116,6 +116,6 @@ public class StudentMarksSystemExp3 extends Frame {
     }
 
     public static void main(String[] args) {
-        new studentMarksSystem();
+        new StudentMarksSystemExp3();
     }
 }
