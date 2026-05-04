@@ -30,13 +30,16 @@ class two extends java.rmi.server.UnicastRemoteObject implements one {
     }
 }
 
-class rmiserver {
+
+public class rmiserver {
 
     public static void main(String args[]) {
 
         try {
             two twox = new two();
-            Naming.bind("palin", twox);
+
+            Naming.bind("rmi://localhost/palin", twox);
+
             System.out.println("Object registered");
 
         } catch (Exception e) {
