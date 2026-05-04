@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KeyListenerEg extends Frame implements KeyListener, ActionListener {
+public class exp1 extends Frame implements KeyListener, ActionListener {
 
     Label l;
     TextArea area;
