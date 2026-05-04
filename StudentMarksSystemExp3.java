@@ -9,7 +9,7 @@ public class StudentMarksSystemExp3 extends Frame {
     JTextField tf1, tf2, tf3, tf4, tf5, tf6;
     JTextArea area2, area1;
 
-    studentMarksSystem() {
+    StudentMarksSystemExp3() {
 
         l1 = new JLabel("Student Marks");
         l1.setBounds(550, 100, 250, 20);
