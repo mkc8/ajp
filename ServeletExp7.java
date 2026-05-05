@@ -1,45 +1,79 @@
-import java.rmi.*;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public interface Search extends Remote {
-    public String query(String search) throws RemoteException;
-}
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet("/Login")
+public class Login extends HttpServlet {
 
-class SearchQuery extends java.rmi.server.UnicastRemoteObject implements Search {
-    SearchQuery() throws RemoteException {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Constructor
+     */
+    public Login() {
         super();
     }
 
-    public String query(String search) throws RemoteException {
-        String result;
-        if (search.equals("RMI LAB"))
-            result = "Found";
-        else
-            result = "Not Found";
-        return result;
+    /**
+     * Handles GET request
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.getWriter()
+                .append("Served at: ")
+                .append(request.getContextPath());
+    }
+
+    /**
+     * Handles POST request
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+
+        String uname = request.getParameter("username");
+        String pass = request.getParameter("password");
+
+        response.getWriter().println("<h2>Username: " + uname + "</h2>");
+        response.getWriter().println("<h2>Password: " + pass + "</h2>");
+    }
+
+    /**
+     * Handles DELETE request
+     */
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Not implemented
     }
 }
 
-class SearchServer {
-    public static void main(String args[]) {
-        try {
-            Search obj = new SearchQuery();
-            java.rmi.registry.LocateRegistry.createRegistry(1900);
-            Naming.rebind("rmi://localhost:1900/geeksforgeeks", obj);
-        } catch (Exception ae) {
-            System.out.println(ae);
-        }
-    }
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
 
-class ClientRequest {
-    public static void main(String args[]) {
-        String answer, value = "RMI LAB";
-        try {
-            Search access = (Search) Naming.lookup("rmi://localhost:1900/geeksforgeeks");
-            answer = access.query(value);
-            System.out.println("Article on " + value + " " + answer);
-        } catch (Exception ae) {
-            System.out.println(ae);
-        }
-    }
-}
+    <h2>Login Form</h2>
+
+    <form action="Login" method="post">
+        <label>Username:</label>
+        <input type="text" name="username"><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
