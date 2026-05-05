@@ -1,45 +1,76 @@
-# Servlet Experiment (Calculator Application)
+# Servlet Experiment
 
-## 🔹 Requirements
+## Step-by-Step Guide
 
-* Java (JDK 8+)
-* Eclipse IDE (Enterprise Edition)
-* Apache Tomcat Server
+1. **Open Eclipse IDE**
 
-## 🔹 Setup Steps
+2. **Create a Dynamic Web Project**
 
-### 1. Install Tomcat
+   * Go to: `File → New → Dynamic Web Project`
+   * Enter **Project Name**
+   * Click **Next**
+   * Click **Next** again
 
-Download and extract Apache Tomcat
+3. **Important Step**
 
-### 2. Configure in Eclipse
+   * Check  **Generate web.xml most important**
+   * Click **Finish**
 
-* Window → Preferences → Server → Runtime Environments
-* Add Apache Tomcat → Select folder
+4. **Create Servlet**
 
-### 3. Create Dynamic Web Project
+   * Right-click on project → `New → Servlet`
+   * Enter **Class Name: Login**
+   * Click **Next**
+   * Click **Next** again
+   * Select:
 
-* File → New → Dynamic Web Project
-* Select Tomcat runtime
+     *  `init()`
+     *  `doDelete()`
+   * Click **Finish**
 
-### 4. Add Files
+5. **Write Servlet Code**
 
-* index.html → inside WebContent
-* CalculatorServlet.java → inside src
+   * Open `Login.java`
+   * Paste your servlet code
 
-### 5. Run Project
+6. **Create HTML File**
 
-* Right click → Run As → Run on Server
+   * Go to `WebContent` (or `webapp`) folder
+   * Right-click → `New → HTML File`
+   * Name it: `index.html`
+   * Paste your login form code
 
-Open in browser:
+7. **Run the Project**
 
-```
-http://localhost:8080/ProjectName/index.html
-```
+   * Right-click on `Login.java`
+   * Click **Run As → Run on Server**
+   * Select **Apache Tomcat v9.0**
+   * Click **Finish**
 
-## 🔹 Output
+8. **Access the Application**
 
-* Performs addition, subtraction, multiplication, division
+   * Right-click `index.html`
+   * Run as → **Run on Server**
+
+9. **Result**
+
+   * Login form will open in browser
+   * Enter username & password
+   * You will see the output displayed
+
+---
+
+## Notes
+
+* Make sure Tomcat is properly configured in Eclipse
+* Project should be deployed on **localhost**
+* URL will look like:
+  `http://localhost:8080/ProjectName/index.html`
+
+---
+
+
+
 
 ## ⚠️ Common Errors
 
